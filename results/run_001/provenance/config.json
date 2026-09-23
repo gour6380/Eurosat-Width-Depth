@@ -1,0 +1,50 @@
+{
+  "benchmark": {
+    "batch_sizes": [
+      1,
+      64
+    ],
+    "repetitions": 30,
+    "warmups": 5
+  },
+  "data": {
+    "archive_md5": "f46e308c4d50d4bf32fedad2d3d62f3b",
+    "archive_url": "https://zenodo.org/records/7711810/files/EuroSAT_RGB.zip",
+    "classes": 10,
+    "expected_images": 27000,
+    "image_size": 64,
+    "split_base_url": "https://hf.co/datasets/torchgeo/eurosat/resolve/1ce6f1bfb56db63fd91b6ecc466ea67f2509774c/"
+  },
+  "max_parameter_spread": 0.05,
+  "models": [
+    {
+      "base_width": 48,
+      "blocks_per_stage": 1,
+      "name": "shallow_wide"
+    },
+    {
+      "base_width": 32,
+      "blocks_per_stage": 2,
+      "name": "middle"
+    },
+    {
+      "base_width": 22,
+      "blocks_per_stage": 4,
+      "name": "deep_narrow"
+    }
+  ],
+  "protocol": "eurosat-width-depth-v3",
+  "training": {
+    "batch_size": 128,
+    "gradient_clip": 1.0,
+    "horizontal_flip": true,
+    "learning_rate": 0.001,
+    "max_epochs": 40,
+    "min_learning_rate": 1e-05,
+    "num_workers": 0,
+    "seed": 42,
+    "validation_batch_size": 256,
+    "vertical_flip": true,
+    "weight_decay": 0.0001
+  }
+}

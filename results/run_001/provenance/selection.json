@@ -1,0 +1,37 @@
+{
+  "data_identity": "82e6e69a437f62d31cb0893ef2c1e63cf7a8a3f1ea4684a5781e13d29d4f9286",
+  "frozen_at": "2026-09-23T12:04:12.852502+00:00",
+  "identity_sha256": "7e4e549931816d7d94b6c618c63a41b1deb929a016ea622a455d4ffb620ba08b",
+  "rule": "highest validation accuracy; lowest validation CE; earliest epoch",
+  "run_identity": {
+    "config_hash": "a3f472af4384d41e2ec90439ca15b08c73e97404aa0172b286f202ea33e9fdf3",
+    "created_at": "2026-09-23T11:00:28.164120+00:00",
+    "device": "mps",
+    "environment_hash": "da368f1a5dde846500522a7acbf8ad1f9e61d348ad2fd4d5c32cb9f0c6eac69b",
+    "protocol": "eurosat-width-depth-v3",
+    "run_uuid": "887694eb92d94ce2890c9100097caff1",
+    "source_hash": "2a30f3b9ab5498ba9188de5daa240c15b9171cce6b44768680cae29ea58c1933"
+  },
+  "scope": "one seed; all three parameter-matched shapes; no test-based selection",
+  "seed": 42,
+  "selected": {
+    "deep_narrow": {
+      "epoch": 28,
+      "file": "models/deep_narrow/seed_42/checkpoints/epoch_028.pt",
+      "parameter_count": 697344,
+      "sha256": "f9110cb1355029afcbfe320909b4c6e50e6870b5a63bdd7f747c8eccf3721968"
+    },
+    "middle": {
+      "epoch": 34,
+      "file": "models/middle/seed_42/checkpoints/epoch_034.pt",
+      "parameter_count": 696618,
+      "sha256": "5c10355dde5ec5c63bbef4eac4b58e2454ff90d11948ac18dd5384a76e5a73f2"
+    },
+    "shallow_wide": {
+      "epoch": 34,
+      "file": "models/shallow_wide/seed_42/checkpoints/epoch_034.pt",
+      "parameter_count": 691834,
+      "sha256": "df077b72972154334d2dfc1f226ef356772ebb6fb690102f7463df49c5035a45"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "checkpoint_sha256": "800c47377eb43297bdf7d977b7e5370f5a68f2b8a14ed7a09a0d20e24cb85f11",
+  "identity_sha256": "80c1437be09a14c6d5c7e6537e6996f0d7b59b8ebaf77fe8d8497ba862807225",
+  "metrics": {
+    "checkpoint_seconds": 0.048020500005804934,
+    "epoch": 2,
+    "epoch_seconds": 27.397921666008187,
+    "gradient_norm": 6.059016670767717,
+    "learning_rate": 0.0009984740801978985,
+    "logging_seconds": 0.0012443330051610246,
+    "mps_driver_mib": 3439.46875,
+    "mps_live_mib": 42.865234375,
+    "optimizer_updates": 127,
+    "process_rss_mib": 939.640625,
+    "seed": 42,
+    "stage": "models",
+    "timing_boundary": "through epoch logging; excludes final receipt/table/TensorBoard timing-series publication",
+    "timing_receipt": "complete",
+    "train_accuracy": 0.819320987654321,
+    "train_examples": 16200,
+    "train_examples_per_second": 637.3422534443893,
+    "train_loss": 0.5309016927083333,
+    "train_seconds": 25.4180542910035,
+    "validation_accuracy": 0.6664814814814815,
+    "validation_examples": 5400,
+    "validation_loss": 1.0130859375,
+    "validation_seconds": 1.9305065420048777,
+    "variant": "shallow_wide"
+  }
+}

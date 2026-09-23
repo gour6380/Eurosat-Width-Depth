@@ -1,0 +1,25 @@
+{
+  "files": {
+    "confusion.csv": "e0d32f0205867183d73ea4c3633d4576bdf56adbb18e483805d561449bfad466",
+    "failures.csv": "722889c525522e2709c641a9fee4c7dd479578c5369d0ba7da7a8699258b82d2",
+    "metrics.json": "8aa55991ae8a123e041ecf5c39a7a5c800210edc45c7d856e191d9ebe0b9acf4",
+    "per_class.csv": "25f053134ccf7aa8a543f88afd4c6e2f34cbffd37d9cb5d045e67ddbfc504c1d",
+    "predictions.csv": "68f9576c52ab1a733980131f271e24721e71e6b3e45c0232625070c9fb8481b4"
+  },
+  "identity": {
+    "checkpoint_sha256": "df077b72972154334d2dfc1f226ef356772ebb6fb690102f7463df49c5035a45",
+    "data": "82e6e69a437f62d31cb0893ef2c1e63cf7a8a3f1ea4684a5781e13d29d4f9286",
+    "partition": "test",
+    "run": {
+      "config_hash": "a3f472af4384d41e2ec90439ca15b08c73e97404aa0172b286f202ea33e9fdf3",
+      "created_at": "2026-09-23T11:00:28.164120+00:00",
+      "device": "mps",
+      "environment_hash": "da368f1a5dde846500522a7acbf8ad1f9e61d348ad2fd4d5c32cb9f0c6eac69b",
+      "protocol": "eurosat-width-depth-v3",
+      "run_uuid": "887694eb92d94ce2890c9100097caff1",
+      "source_hash": "2a30f3b9ab5498ba9188de5daa240c15b9171cce6b44768680cae29ea58c1933"
+    },
+    "variant": "shallow_wide"
+  },
+  "identity_sha256": "6aad08beafdb8ed1e9879dcdc6f3f90bcb9264e5d6258cce0ffbdc09bd3d40ae"
+}

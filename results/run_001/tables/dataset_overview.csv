@@ -1,0 +1,12 @@
+field,value
+Dataset,EuroSAT RGB
+Source,https://zenodo.org/records/7711810/files/EuroSAT_RGB.zip
+Spatial split,Published TorchGeo longitude-based EuroSATSpatial partitions
+Image dimensions,"3 × 64 × 64; native RGB, no resize"
+Image values,"Cached uint8 [0,255]; device normalization after /255"
+Classes,10
+Normalization fit,Training pixels only
+Dataset identity,82e6e69a437f62d31cb0893ef2c1e63cf7a8a3f1ea4684a5781e13d29d4f9286
+test images,5400
+train images,16200
+val images,5400

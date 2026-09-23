@@ -1,0 +1,52 @@
+# Local datasets, checkpoints and experiment working directories.
+/data/
+/runs/
+/artifacts/
+/checkpoints/
+/logs/
+/tensorboard/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+events.out.tfevents.*
+*.log
+
+# Python environments, build output and caches.
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+
+# Notebook backups, editor files and local configuration.
+.ipynb_checkpoints/
+/notebook_archive/
+.DS_Store
+.AppleDouble
+.idea/
+.vscode/
+*.swp
+*~
+.env
+.env.*
+!.env.example
+
+# Local packaging copies and historical setup/preservation receipts.
+/github-ready/
+/docs/environment_setup.json
+/docs/handoff_checks.json
+/docs/*preservation*.json
+/docs/*revision*.json
+
+# Curated results/, reports, source, tests, the notebook and uv.lock are retained.

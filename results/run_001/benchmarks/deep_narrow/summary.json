@@ -1,0 +1,46 @@
+{
+  "boundary": "FP32 model forward only; excludes image load, normalization, transfer and prediction formatting",
+  "checkpoint_sha256": "f9110cb1355029afcbfe320909b4c6e50e6870b5a63bdd7f747c8eccf3721968",
+  "identity": {
+    "configuration_sha256": "a3f472af4384d41e2ec90439ca15b08c73e97404aa0172b286f202ea33e9fdf3",
+    "data": "82e6e69a437f62d31cb0893ef2c1e63cf7a8a3f1ea4684a5781e13d29d4f9286",
+    "run": {
+      "config_hash": "a3f472af4384d41e2ec90439ca15b08c73e97404aa0172b286f202ea33e9fdf3",
+      "created_at": "2026-09-23T11:00:28.164120+00:00",
+      "device": "mps",
+      "environment_hash": "da368f1a5dde846500522a7acbf8ad1f9e61d348ad2fd4d5c32cb9f0c6eac69b",
+      "protocol": "eurosat-width-depth-v3",
+      "run_uuid": "887694eb92d94ce2890c9100097caff1",
+      "source_hash": "2a30f3b9ab5498ba9188de5daa240c15b9171cce6b44768680cae29ea58c1933"
+    },
+    "seed": 42,
+    "stage": "models",
+    "variant": "deep_narrow"
+  },
+  "limitation": "One bounded block per model, sequential order; not a paired hardware optimization study",
+  "memory_definition": "Post-case snapshots, not peaks; counters are not additive",
+  "raw_sha256": "b0ab0be66a97caf2f84bea33f1eedaaa77c4f36bc900fdd528ab93eab4eee83d",
+  "requests_sha256": "6aac6a8a7978a327dfd35d92598f4e14ff7d07be503842b3a31b78ecaf9da2b7",
+  "results": [
+    {
+      "batch_size": 1,
+      "images_per_second": 213.02978951249403,
+      "mps_driver_mib": 4225.671875,
+      "mps_live_mib": 2.794921875,
+      "p50_ms": 4.6871250015101396,
+      "p95_ms": 5.430393755523253,
+      "process_rss_mib": 649.71875,
+      "requests": 30
+    },
+    {
+      "batch_size": 64,
+      "images_per_second": 1984.238390405062,
+      "mps_driver_mib": 4199.84375,
+      "mps_live_mib": 8.728271484375,
+      "p50_ms": 32.13362500537187,
+      "p95_ms": 32.816914949944476,
+      "process_rss_mib": 683.09375,
+      "requests": 30
+    }
+  ]
+}

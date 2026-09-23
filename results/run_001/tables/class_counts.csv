@@ -1,0 +1,11 @@
+class,test,train,val
+AnnualCrop,818,1788,394
+Forest,1077,1309,614
+HerbaceousVegetation,816,1854,330
+Highway,340,1698,462
+Industrial,353,1659,488
+Pasture,115,1767,118
+PermanentCrop,307,1716,477
+Residential,507,1927,566
+River,331,1507,662
+SeaLake,736,975,1289

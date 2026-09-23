@@ -1,0 +1,16 @@
+variant,confidence_rank_within_errors,sample_id,true_class,predicted_class,confidence
+shallow_wide,1,Pasture_889.jpg,Pasture,Forest,0.9999988079071044
+shallow_wide,2,AnnualCrop_1627.jpg,AnnualCrop,HerbaceousVegetation,0.9999121427536012
+shallow_wide,3,AnnualCrop_35.jpg,AnnualCrop,PermanentCrop,0.9998801946640016
+shallow_wide,4,AnnualCrop_1191.jpg,AnnualCrop,SeaLake,0.9997933506965636
+shallow_wide,5,AnnualCrop_999.jpg,AnnualCrop,PermanentCrop,0.9997186064720154
+middle,1,AnnualCrop_1114.jpg,AnnualCrop,SeaLake,0.999996304512024
+middle,2,Pasture_889.jpg,Pasture,Forest,0.9999871253967284
+middle,3,AnnualCrop_1191.jpg,AnnualCrop,SeaLake,0.9999524354934692
+middle,4,PermanentCrop_1328.jpg,PermanentCrop,HerbaceousVegetation,0.9999505281448364
+middle,5,AnnualCrop_759.jpg,AnnualCrop,River,0.9999383687973022
+deep_narrow,1,AnnualCrop_2150.jpg,AnnualCrop,Highway,0.9999887943267822
+deep_narrow,2,Pasture_889.jpg,Pasture,Forest,0.999976634979248
+deep_narrow,3,HerbaceousVegetation_1976.jpg,HerbaceousVegetation,PermanentCrop,0.9999395608901978
+deep_narrow,4,River_411.jpg,River,AnnualCrop,0.9998620748519896
+deep_narrow,5,AnnualCrop_1627.jpg,AnnualCrop,HerbaceousVegetation,0.999840259552002

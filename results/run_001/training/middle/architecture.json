@@ -1,0 +1,12 @@
+{
+  "classes": 10,
+  "configuration": {
+    "base_width": 32,
+    "blocks_per_stage": 2,
+    "name": "middle"
+  },
+  "data_identity": "82e6e69a437f62d31cb0893ef2c1e63cf7a8a3f1ea4684a5781e13d29d4f9286",
+  "initialization": "fresh independently seeded weights; resume restores this fit's last committed epoch",
+  "parameter_count": 696618,
+  "seed": 42
+}

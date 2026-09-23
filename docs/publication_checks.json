@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-09-23T18:23:16.248277+05:30",
+  "scope": "Static publication preparation and saved-record checks only. No project imports, dataset processing, models, tests, training, evaluation or benchmarks executed.",
+  "run": "run_001",
+  "protocol": "eurosat-width-depth-v3",
+  "recorded_experiment": {
+    "seed": 42,
+    "epochs_per_model": 40,
+    "models": 3,
+    "backend": "mps"
+  },
+  "checks": {
+    "ruff_source_tests_tools": "passed",
+    "ruff_distribution_notebook": "passed",
+    "python_and_notebook_syntax": "passed",
+    "explained_notebook_code_cells": 34,
+    "distribution_outputs": 0,
+    "one_model_operation_per_cell": "passed",
+    "source_manifest_files_matching_original_run": 15,
+    "byte_identical_copied_artifacts": 192,
+    "saved_predictions_recomputed": 16200,
+    "epoch_rows_checked": 120,
+    "validation_checkpoint_selections_verified": 3,
+    "local_markdown_links_checked_before_receipt": 72,
+    "private_path_and_secret_pattern_scan": "no hits in publication files",
+    "forbidden_large_runtime_artifact_scan": "no hits",
+    "protected_original_files_unchanged": 391
+  },
+  "limits": [
+    "Standalone correctness/recovery tests are authored but not run.",
+    "No interrupted recovery was exercised by the completed run.",
+    "No raw failure images visually reviewed in this packaging task.",
+    "One-seed findings and one-block timing measurements retain their limitations.",
+    "Private-path and secret pattern scanning is not an exhaustive security audit."
+  ],
+  "preserved": [
+    "src",
+    "tests",
+    "notebooks/eurosat_width_depth.ipynb",
+    "data",
+    "runs",
+    "pyproject.toml",
+    "uv.lock"
+  ],
+  "publication_notebook_changes": [
+    "Removed outputs, execution counts and execution metadata.",
+    "Made repository-root discovery independent of checkout folder name.",
+    "Set display-only training/evaluation/benchmark switches to False.",
+    "Updated introductory Markdown to actual 40-epoch recipe."
+  ],
+  "git_commands_used": false,
+  "published": false
+}
