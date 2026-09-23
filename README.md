@@ -1,5 +1,7 @@
 # Width vs Depth on EuroSAT
 
+[Repository](https://github.com/gour6380/Eurosat-Width-Depth) · [Executed notebook](notebooks/eurosat_width_depth.ipynb) · [Technical report](docs/technical_report.md) · [Saved results](results/run_001/README.md)
+
 **Does a deeper network help when the parameter budget stays almost the same?** This PyTorch experiment compares three residual CNNs on real satellite imagery, measuring classification quality, training cost and inference latency.
 
 In the completed experiment, the **middle model reached 91.67% test accuracy in 14.57 minutes of recorded training/validation epoch time**. The deeper model took 30.86 minutes and reached 89.70%. This is an exploratory result from one seed, one spatial split and one fixed training recipe—not a universal ranking of width and depth.
@@ -20,7 +22,7 @@ Parameter spread is **0.80%**. Macro F1 weights each of the ten classes equally;
 
 The middle model used **19.7% less recorded fit time** than shallow/wide while improving test accuracy by **1.85 percentage points**. Shallow/wide had the lowest batch-1 forward latency. Deep/narrow had slightly higher selected validation accuracy than middle, but lower test accuracy; different class mixtures across the spatial partitions matter when interpreting that reversal.
 
-**Read:** [technical report](docs/technical_report.md) · [protocol](docs/protocol.md) · [result tables and provenance](results/run_001/README.md) · [reproduction guide](docs/reproduce.md)
+**Read:** [technical report](docs/technical_report.md) · [protocol](docs/protocol.md) · [result tables and provenance](results/run_001/README.md) · [reproduction instructions](#reproduce-with-the-notebook)
 
 ## What this project implements
 
@@ -61,7 +63,13 @@ These exclude image loading, normalization, transfer and output formatting. One 
 
 ## Reproduce with the notebook
 
-The upload copy includes an **output-free notebook**. The original local executed notebook and full run remain separate from that copy. From the repository root, set up Python 3.13 using the committed lockfile:
+The published notebook includes **saved outputs from the completed 40-epoch run**. You can inspect the charts, tables and model results without executing it. These outputs are historical evidence; they do not supply the checkpoints or dataset needed to run the code again.
+
+To run your own experiment:
+
+1. Download the repository using **Code → Download ZIP**, or use this [download link](https://github.com/gour6380/Eurosat-Width-Depth/archive/refs/heads/main.zip).
+2. Extract it and name the local project folder exactly **`eurosat-width-depth`**. The current notebook's root-discovery cell checks that folder name; the default ZIP folder name will not work unchanged.
+3. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if needed, then open a terminal in that project folder and recreate the locked Python 3.13 environment:
 
 ```sh
 uv sync --locked --python 3.13.15
@@ -69,30 +77,48 @@ uv sync --locked --python 3.13.15
 .venv/bin/jupyter lab
 ```
 
-Open [notebooks/eurosat_width_depth.ipynb](notebooks/eurosat_width_depth.ipynb) and select that kernel. Review the configuration cell. In the clean upload copy, training, test evaluation and benchmarking start disabled; enable each stage deliberately. Dataset preparation downloads the verified archive and splits when its cell is run.
+Open [notebooks/eurosat_width_depth.ipynb](notebooks/eurosat_width_depth.ipynb) and select the named kernel. The saved notebook has training, test evaluation and benchmarking enabled from the completed run. **Review its configuration before using Run All.** For staged execution, begin with:
+
+```python
+RUN_DIR = None
+USE_SAVED_CONFIG = True
+RUN_TRAINING = False
+RUN_TEST_EVALUATION = False
+RUN_BENCHMARKS = False
+```
+
+Keep the explicit `TrainingConfig(seed=42, max_epochs=40, batch_size=128, validation_batch_size=256)` to use the reported training recipe. Run imports, configuration, run creation and data preparation in order. The preparation cell downloads the verified archive and split manifests if there is no compatible local cache.
+
+Set `RUN_TRAINING=True` and rerun the configuration cell when ready, then execute the three model cells individually. After all three fits complete, enable test evaluation and run the freeze/evaluation cells. Benchmarking is a separate optional stage. Avoid rerunning the run-creation cell with `RUN_DIR=None` unless you intend to allocate another experiment.
 
 `RUN_DIR=None` creates a new numbered run. Set `RUN_DIR="run_001"` (or the actual printed run name) to resume that local run later. `USE_SAVED_CONFIG=True` restores saved settings; `False` requires the notebook settings to match. Changing training settings, including the epoch limit, requires a fresh run. The published `results/run_001/` is an evidence bundle, **not** a resumable run.
 
-The reference platform is macOS/Apple Silicon; the device preference is MPS → CUDA → CPU. Source uses POSIX file locks, so native Windows is not supported. CUDA/Linux and other backends have not been runtime-validated by this experiment. Exact numerical/timing reproduction on another platform is not promised. More detail is in [reproduce.md](docs/reproduce.md).
+The reference platform is macOS/Apple Silicon; the device preference is MPS → CUDA → CPU. Source uses POSIX file locks, so native Windows is not supported. CUDA/Linux and other backends have not been runtime-validated by this experiment. Exact numerical/timing reproduction on another platform is not promised. Resume also checks the recorded source, dependency lock, installed environment, backend and dataset identities; it is not a cross-machine checkpoint migration workflow.
 
 ## Repository layout
 
 ```text
 src/                    reusable experiment code
-notebooks/              one modular notebook
+notebooks/              modular notebook with completed-run outputs
 tests/                  authored correctness and recovery tests
 docs/                   protocol, technical report, reproduction and attribution
-results/run_001/         small, curated evidence suitable for GitHub
+results/run_001/         saved metrics, figures and provenance
 tools/                  static checks and release verification
 pyproject.toml, uv.lock  exact dependencies and lockfile
 data/, runs/            generated locally; ignored
 ```
 
-Dataset caches, checkpoints, environments, TensorBoard events, logs, notebook backups and packaging copies are excluded by `.gitignore`. Keep `results/`, source, tests, reports and `uv.lock`.
+Dataset caches, checkpoints, environments, TensorBoard events, logs, notebook backups and local packaging copies are excluded by `.gitignore`. The repository retains source, tests, reports, `uv.lock` and the curated `results/` evidence.
 
 ## Validation and remaining work
 
-The [packaging check receipt](docs/publication_checks.json) records artifact hashes, derived metric tables, links, notebook structure and source syntax checks performed without executing the experiment. This does not certify runtime correctness. When ready to run the standalone tests:
+The [packaging check receipt](docs/publication_checks.json) records static and saved-artifact checks from release preparation, including a separate clean notebook export. The notebook published here retains its original executed outputs. This receipt is not a passing test-suite result. Run the saved-file integrity checker from the repository root without importing models:
+
+```sh
+python3 tools/verify_release.py
+```
+
+For the authored standalone correctness/recovery tests, run separately:
 
 ```sh
 .venv/bin/python -m pytest
